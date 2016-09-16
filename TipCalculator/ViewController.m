@@ -36,7 +36,7 @@
     float tipAmount = (billAmount * (self.tipPercentageSlider.value/100));
     
     self.tipAmountLabel.text = [NSString stringWithFormat:@"Tip Amount $%.2f", tipAmount];
-    self.currentTipPercentage.text = [NSString stringWithFormat:@"%.1f", self.tipPercentageSlider.value];
+    self.currentTipPercentage.text = [NSString stringWithFormat:@"%.1f%@", self.tipPercentageSlider.value, @"%"];
     
 }
 
