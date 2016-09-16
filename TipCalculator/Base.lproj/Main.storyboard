@@ -18,14 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g2E-oL-vyS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g2E-oL-vyS">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="CTT-zb-sA3"/>
                                     <constraint firstAttribute="height" constant="30" id="VPQ-pa-6jE"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="n3V-Co-31V"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zql-o1-yK3">
                                 <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,26 +48,50 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnb-jh-Joe">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5Ae-VU-Ta5"/>
-                                    <constraint firstAttribute="width" constant="150" id="N6f-jG-7aS"/>
+                                    <constraint firstAttribute="width" constant="250" id="N6f-jG-7aS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kP6-lj-FnL">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ran-a5-ARG"/>
+                                    <constraint firstAttribute="height" constant="30" id="SZE-xU-UcF"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="kvi-BH-980"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9U-N5-J7S">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="aKO-nG-ysA"/>
+                                    <constraint firstAttribute="height" constant="30" id="oNK-2T-dci"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="kP6-lj-FnL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AcE-f7-TaB"/>
+                            <constraint firstItem="M9U-N5-J7S" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-250" id="GWn-Kh-aFm"/>
                             <constraint firstItem="g2E-oL-vyS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="L8F-pB-4Mn"/>
                             <constraint firstItem="zql-o1-yK3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WYe-Bn-5ZE"/>
                             <constraint firstItem="Xnb-jh-Joe" firstAttribute="top" secondItem="g2E-oL-vyS" secondAttribute="bottom" constant="34" id="bcL-b3-47n"/>
                             <constraint firstItem="zql-o1-yK3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="hS3-Kp-7ew"/>
+                            <constraint firstItem="M9U-N5-J7S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l5a-w1-R7X"/>
+                            <constraint firstItem="kP6-lj-FnL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="vv0-oK-IzH"/>
                             <constraint firstItem="g2E-oL-vyS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x5e-kp-egd"/>
                             <constraint firstItem="Xnb-jh-Joe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zAm-bB-Oo3"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="billAmountTextField" destination="g2E-oL-vyS" id="22J-8c-aTp"/>
+                        <outlet property="currentTipPercentage" destination="M9U-N5-J7S" id="Hh5-Zm-CdF"/>
                         <outlet property="tipAmountLabel" destination="Xnb-jh-Joe" id="o6y-HJ-JEn"/>
+                        <outlet property="tipPercentageSlider" destination="kP6-lj-FnL" id="9Wj-dL-bx3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
